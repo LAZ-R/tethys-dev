@@ -1,0 +1,51 @@
+/* ==========================
+ Inter
+===========================*/
+@font-face { font-family: "inter-var"; src: url("../../../medias/fonts/inter/Inter.var.woff2") format("woff2"); }
+@font-face { font-family: "inter-var-italic"; src: url("../../../medias/fonts/inter/Inter-italic.var.woff2") format("woff2"); }
+
+
+/* ==========================
+Consolas
+===========================*/
+@font-face { font-family: "consolas"; src: url("../../../medias/fonts/consolas/Consolas.woff2") format("woff2"); }
+
+@font-face { font-family: "ash"; src: url("../../../medias/fonts/ash.woff2") format("woff2"); }
+@font-face { font-family: "ashven"; src: url("../../../medias/fonts/ashven.woff2") format("woff2"); }
+@font-face { font-family: "deadjim"; src: url("../../../medias/fonts/deadjim.woff2") format("woff2"); }
+@font-face { font-family: "magenta"; src: url("../../../medias/fonts/magenta.woff2") format("woff2"); }
+@font-face { font-family: "mgs"; src: url("../../../medias/fonts/mgs.woff2") format("woff2"); }
+@font-face { font-family: "needforfont"; src: url("../../../medias/fonts/needforfont.woff2") format("woff2"); }
+@font-face { font-family: "neuropolitical"; src: url("../../../medias/fonts/neuropolitical.woff2") format("woff2"); }
+@font-face { font-family: "nhl"; src: url("../../../medias/fonts/nhl.woff2") format("woff2"); }
+@font-face { font-family: "quantum"; src: url("../../../medias/fonts/quantum.woff2") format("woff2"); }
+@font-face { font-family: "recharge"; src: url("../../../medias/fonts/recharge.woff2") format("woff2"); }
+@font-face { font-family: "stereofunk"; src: url("../../../medias/fonts/stereofunk.woff2") format("woff2"); }
+@font-face { font-family: "valorant"; src: url("../../../medias/fonts/valorant.woff2") format("woff2"); }
+@font-face { font-family: "vipnagorgialla"; src: url("../../../medias/fonts/vipnagorgialla.woff2") format("woff2"); }
+/* ---------------------------------------------------------------------- */
+
+.lzr { 
+  font-family: 'consolas', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color--fg-default);
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-size: var(--font-size);
+    line-height: calc(var(--font-size) + (var(--font-size) / 4));
+    margin-bottom: calc(var(--font-size) / 2);
+    color: var(--color--primary);
+  }
+
+  h1 { --font-size: 22px; }
+  h2 { --font-size: 20px; }
+  h3 { --font-size: 18px; }
+  h4 { --font-size: 16px; }
+  h5 { --font-size: 14px; }
+
+  p {
+    margin-top: 0;
+  }
+}

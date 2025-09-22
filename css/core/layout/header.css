@@ -1,0 +1,42 @@
+.lzr {
+
+  .lzr-header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 100%; width: 100%; max-width: 100%;
+    min-height: var(--height--header); height: var(--height--header); max-height: var(--height--header);
+    background-color: var(--color--bg-default);
+    color: var(--color--fg-0);
+
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+      padding: 8px var(--horizontal-padding);
+      gap: 8px;
+
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        min-height: 35px; height: 35px; max-height: 35px;
+        font-size: 12px;
+      }
+    }
+
+    .infos {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+      padding: 8px var(--horizontal-padding);
+      padding-top: 0;
+    }
+  }
+}

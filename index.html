@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr" id="html" class="lzr">
+  <head>
+    <meta charset="utf-8">
+    <title id="title">Page title</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./css/style.css">
+    <link id="favicon" rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="./medias/app-maskable-icons/app_icon_152.png">
+    <meta name="description" content="Jeu de gestion économique spatiale">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 viewport-fit=cover">
+    <meta name="theme-color" content="#000000"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="" id="appleTitle">
+    <meta name="msapplication-TileImage" content="./medias/app-maskable-icons/app_icon_144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+  </head>
+
+  <body id="body" class="lzr-body">
+    <header id="header" class="lzr-header"></header>
+    <main id="main" class="lzr-main"></main>
+    <footer id="footer" class="lzr-footer"></footer>
+    <div id="toastContainer"></div>
+    <div id="myCrewsContainer" class="ghost-page hidden">
+      <div class="ghost-page-header">
+        <div class="title-head">
+          <h1>Équipages</h1>
+          <button class="close-ghost-page-button" style="margin-left: auto;" onclick="onCloseGhostPageButtonClick('myCrewsContainer')">X</button>
+        </div>
+        <span class="spaced-text">
+          <span>En mission</span>
+          <span id="assignedShipsContainer">0</span>
+        </span>
+        <span class="spaced-text">
+          <span>En repos</span>
+          <span id="restingShipsContainer">0</span>
+        </span>
+      </div>
+      <div class="ghost-page-body">
+        <div id="myCrewsDisplay"></div>
+      </div>
+    </div>
+    <div id="warehouseContainer" class="ghost-page hidden">
+      <div class="ghost-page-header">
+        <div class="title-head">
+          <h1>Entrepôt</h1>
+          <button class="close-ghost-page-button" style="margin-left: auto;" onclick="onCloseGhostPageButtonClick('warehouseContainer')">X</button>
+        </div>
+        <span class="spaced-text">
+          <span>Items</span>
+          <span id="warehouseCount" class="txt-primary">0</span>
+        </span>
+        <span class="spaced-text">
+          <span>Valeur totale</span>
+          <span id="totalWarehouseValue" class="txt-primary">0</span>
+        </span>
+      </div>
+      <div class="ghost-page-body">
+        <h2>Marché officiel</h2>
+        <div id="officialWarehouseList"></div>
+        <h2>Marché noir</h2>
+        <div id="blackWarehouseList"></div>
+      </div>
+    </div>
+    <div id="pricesCentralContainer" class="ghost-page hidden">
+      <div class="ghost-page-header">
+        <div class="title-head">
+          <h1>Marchés</h1>
+          <button class="close-ghost-page-button" style="margin-left: auto;" onclick="onCloseGhostPageButtonClick('pricesCentralContainer')">X</button>
+        </div>
+        <span class="spaced-text">
+          <span>Réputation officielle</span>
+          <span id="officialReputation" class="txt-primary"></span>
+        </span>
+        <span class="spaced-text">
+          <span>Réputation black market</span>
+          <span id="blackReputation" class="txt-primary"></span>
+        </span>
+      </div>
+      <div class="ghost-page-body">
+        <h2>Marché officiel</h2>
+        <div id="officialPricesContainer"></div>
+        <h2>Marché noir</h2>
+        <div id="blackPricesContainer"></div>
+      </div>
+    </div>
+    <div id="availableCrewsContainer" class="ghost-page hidden">
+      <div class="ghost-page-header">
+        <div class="title-head">
+          <h1>Attribution</h1>
+          <button class="close-ghost-page-button" style="margin-left: auto;" onclick="onCloseGhostPageButtonClick('availableCrewsContainer')">X</button>
+        </div>
+      </div>
+      <div class="ghost-page-body">
+        <div id="availableCrewsDisplay"></div>
+      </div>
+    </div>
+    <div id="systemContainer" class="ghost-page hidden">
+      <div class="ghost-page-header">
+        <div class="title-head">
+          <h1>Système</h1>
+          <button class="close-ghost-page-button" style="margin-left: auto;" onclick="onCloseGhostPageButtonClick('systemContainer')">X</button>
+        </div>
+        
+        <span>Cycle <span id="currentCycleCard">XXX</span></span>
+      </div>
+      <div class="ghost-page-body">
+        <div id="systemDisplay">
+        </div>
+      </div>
+    </div>
+    <div id="settingsContainer" class="ghost-page hidden">
+      <div class="ghost-page-header">
+        <div class="title-head">
+          <h1>Paramètres</h1>
+          <button class="close-ghost-page-button" style="margin-left: auto;" onclick="onCloseGhostPageButtonClick('settingsContainer')">X</button>
+        </div>
+      </div>
+      <div class="ghost-page-body">
+        <div id="settingsDisplay">
+        </div>
+      </div>
+    </div>
+    <div id="helpContainer" class="ghost-page hidden">
+      <div class="ghost-page-header">
+        <div class="title-head">
+          <h1>Aide</h1>
+          <button class="close-ghost-page-button" style="margin-left: auto;" onclick="onCloseGhostPageButtonClick('helpContainer')">X</button>
+        </div>
+      </div>
+      <div class="ghost-page-body">
+        <div id="helpDisplay">
+        </div>
+      </div>
+    </div>
+    <div id="storageContainer" class="ghost-page hidden">
+      <div class="ghost-page-header">
+        <div class="title-head">
+          <h1>Stockage</h1>
+          <button class="close-ghost-page-button" style="margin-left: auto;" onclick="onCloseGhostPageButtonClick('storageContainer')">X</button>
+        </div>
+      </div>
+      <div class="ghost-page-body">
+        <div id="storageDisplay">
+        </div>
+      </div>
+    </div>
+    <div id="popUp" class="hidden">
+      <div class="pop-up-header">
+        <div class="title-head">
+          <h2 id="popUpRessourceTitle">Vente</h2>
+          <button class="close-ghost-page-button" style="margin-left: auto;" onclick="onClosePopUpButtonClick()">X</button>
+        </div>
+        <span id="popUpRessourceName" class="spaced-text">ressource name</span>
+        <span id="popUpRessourceAsk" class="spaced-text">ressource name</span>
+      </div>
+      <div id="popUpBody" class="pop-up-body"></div>
+    </div>
+    <div id="gameOverContainer" class="hidden"></div>
+    <div id="startGameContainer" class="hidden"></div>
+
+  </body>
+
+  <script type="module" src="./js/main.js"></script>
+
+</html>
